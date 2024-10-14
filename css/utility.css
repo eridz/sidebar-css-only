@@ -1,0 +1,55 @@
+.bs-card-inline {
+    --_sz-icon: 3.5em;
+    font-size: 0.9em;
+    display: grid;
+    grid-template-areas:
+        "logo name     name      play"
+        "logo study    sub-study play"
+        "logo function function  play";
+    grid-template-columns: var(--_sz-icon) min-content auto max-content;
+    grid-template-rows: calc(var(--_sz-icon) * 0.4) repeat(2,
+            calc(var(--_sz-icon) * 0.3));
+    align-items: center;
+    column-gap: var(--padding-xs);
+    padding: var(--padding-xxs);
+    border-radius: var(--border-radius-l);
+    
+    & .bs-logo {
+        grid-area: logo;
+        height: var(--_sz-icon);
+        aspect-ratio: 1;
+        border-radius: var(--border-radius-l);
+    }
+    
+    & .bs-name {
+        font-size: 1em;
+        font-weight: 400;
+        grid-area: name;
+    }
+    
+    & .bs-study {
+        grid-area: study;
+        font-size: 0.8em;
+    }
+    
+    & .bs-sub-study {
+        grid-area: sub-study;
+        font-size: 0.8em;
+    }
+    
+    & .bs-function {
+        grid-area: function;
+        font-size: 0.9em;
+    }
+    
+    & .bs-play-btn {
+        grid-area: play;
+        font-size: 1em;
+        width: min-content;
+        height: min-content;
+        display: block;
+        text-decoration: none;
+        padding: var(--padding-xxs) var(--padding-s);
+        border-radius: var(--border-radius-l);
+    }
+}
